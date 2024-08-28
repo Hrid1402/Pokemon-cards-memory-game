@@ -1,0 +1,136 @@
+.gameBlock{
+    width: 100%;
+    height: 100%;
+}
+
+
+.cards{
+    display: flex;
+    /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
+    gap: 1rem;
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.gameBlock .TXTmenu{
+    font-size: 5.2em;
+    line-height: 1.1;
+    text-align: center;
+    color: #f0f0f0;
+    margin: 35px;
+    text-shadow: 1px 1px 22px rgba(0,0,0,0.6);
+}
+
+.card:hover{
+    transition: box-shadow 0.2s, background-color 0.2s;
+    background-color: rgba(255, 255, 255, 0.548);
+    box-shadow: 0px 0px 28px 0px rgba(255, 255, 255, 0.73);
+}
+.card:active{
+    background-color: rgb(63, 63, 63);
+}
+.card{
+    background-color: rgba(255, 255, 255, 0.219);
+    border-radius: 45px;
+    padding: 1rem;
+    margin: 0.2rem;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: transform 1s, box-shadow 0.5s, background-color 0.5s;
+    width: 200px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(180deg);
+}
+.card .front{
+    user-select: none;
+    pointer-events: none;
+    position: absolute;
+    max-width: 100%;
+    max-height: 100%;
+}
+.card .back{
+    user-select: none;
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+}
+
+.flip{
+    animation: cardSpin 0.5s ease-in;
+    animation-fill-mode: forwards;  
+}
+.flip2{
+    animation: cardSpin2 0.5s ease-in;
+    animation-fill-mode: forwards; 
+   
+}
+
+@keyframes cardSpin {
+    0%{
+        transform: rotateY(180deg);
+        
+    }
+    100%{
+        transform: rotateY(360deg);
+    }
+}
+@keyframes cardSpin2 {
+    0%{
+        transform: rotateY(0deg);
+    }
+    100%{
+        transform: rotateY(180deg);
+    }
+
+}
+
+@media (max-width:780px){
+  .card{
+    width: 150px;
+    height: 250px;  
+  }
+  .gameBlock .TXTmenu{
+    margin: 25px;
+    font-size: 4.2em;
+  }
+}
+@media (max-width:620px){
+    .card{
+      width: 120px;
+      height: 220px;  
+    }
+    .gameBlock .TXTmenu{
+      margin: 15px;
+      font-size: 3.5em;
+    }
+}
+@media (max-width:518px){
+    .card{
+      width: 100px;
+      height: 200px;  
+    }
+    .gameBlock .TXTmenu{
+      margin: 8px;
+      font-size: 3.3em;
+    }
+}
+@media (max-width:462px){
+    .card{
+      width: 80px;
+      height: 180px;  
+    }
+    .gameBlock .TXTmenu{
+      margin: 10px;
+      font-size: 2.8em;
+    }
+}
+
